@@ -32,7 +32,6 @@ html{font-size:13px;scroll-behavior:smooth}
 body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden}
 body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 800px 600px at 80% -10%,rgba(30,58,138,.06) 0%,transparent 70%),radial-gradient(ellipse 600px 400px at -10% 80%,rgba(37,99,235,.05) 0%,transparent 70%);pointer-events:none;z-index:0}
 
-/* ═══════ LAYOUT ═══════ */
 .shell{display:flex;min-height:100vh;position:relative;z-index:1}
 .sidebar{width:var(--sb);flex-shrink:0;background:var(--surf);border-right:1px solid var(--border);display:flex;flex-direction:column;position:fixed;top:0;left:0;bottom:0;z-index:200;overflow-y:auto;box-shadow:4px 0 24px rgba(30,58,138,.06)}
 .main{margin-left:var(--sb);flex:1;min-width:0;display:flex;flex-direction:column}
@@ -88,9 +87,6 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
 .btn-primary:hover{background:#163a5b;transform:translateY(-1px);box-shadow:0 4px 16px rgba(30,58,138,.4)}
 .btn-ghost{background:var(--surf);color:var(--muted);border:1px solid var(--border)}
 .btn-ghost:hover{background:var(--surf2);color:var(--text)}
-.btn-violet{background:var(--violet-l);color:var(--violet);border:1px solid rgba(124,58,237,.2)}
-.btn-violet:hover{background:rgba(124,58,237,.16)}
-.btn-amber{background:var(--amber-l);color:var(--amber);border:1px solid var(--amber-b)}
 .btn:disabled{opacity:.5;cursor:not-allowed;transform:none!important}
 
 /* ═══════ FILTERS ═══════ */
@@ -117,37 +113,6 @@ select.inp{cursor:pointer;min-width:110px}
 @keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
 .sec-lbl{font-size:.55rem;font-weight:700;color:var(--sub);text-transform:uppercase;letter-spacing:.16em;margin-bottom:12px;display:flex;align-items:center;gap:10px}
 .sec-lbl::after{content:'';flex:1;height:1px;background:var(--border)}
-
-/* ═══════ PANEL SUPERIOR (CHIPS + HEATMAP) ═══════ */
-.panel-top{background:var(--surf);border:1px solid var(--border);border-radius:var(--r);margin-bottom:18px;overflow:hidden;box-shadow:0 2px 8px var(--shadow)}
-.pt-hdr{padding:14px 18px;background:linear-gradient(135deg,var(--indigo-l),rgba(37,99,235,.04));border-bottom:1px solid var(--indigo-b);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
-.pt-hdr-ttl{font-size:.9rem;font-weight:800;color:var(--indigo);display:flex;align-items:center;gap:8px}
-.pt-hdr-meta{display:flex;gap:14px;font-size:.7rem;color:var(--muted)}
-.pt-hdr-meta b{color:var(--indigo);font-family:var(--mono)}
-.pt-body{padding:16px 18px}
-
-.chips-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
-.chip{display:inline-flex;align-items:center;gap:7px;padding:7px 13px;border-radius:20px;background:var(--surf2);border:1px solid var(--border);font-size:.72rem;font-weight:600;color:var(--muted);transition:all .18s;cursor:default}
-.chip:hover{transform:translateY(-2px);box-shadow:0 4px 12px var(--shadow);border-color:var(--indigo-b);color:var(--indigo)}
-.chip .chip-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
-.chip .chip-v{font-family:var(--mono);font-weight:800;color:var(--indigo);padding:1px 7px;border-radius:10px;background:var(--indigo-l);font-size:.68rem}
-.chip.on{background:var(--indigo-l);color:var(--indigo);border-color:var(--indigo-b)}
-
-.heatmap-wrap{background:var(--surf2);border:1px solid var(--border);border-radius:var(--r-sm);padding:14px;overflow-x:auto}
-.heatmap-legend{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;flex-wrap:wrap;gap:10px}
-.heatmap-legend-ttl{font-size:.72rem;font-weight:700;color:var(--text)}
-.heatmap-scale{display:flex;align-items:center;gap:6px;font-size:.6rem;color:var(--muted)}
-.heatmap-scale-bar{display:flex;height:10px;border-radius:4px;overflow:hidden;border:1px solid var(--border)}
-.heatmap-scale-step{width:22px}
-.heatmap-table{width:100%;border-collapse:separate;border-spacing:2px;min-width:700px}
-.heatmap-table th{padding:7px 6px;font-size:.54rem;font-weight:700;color:var(--sub);text-transform:uppercase;letter-spacing:.05em;text-align:center;background:var(--surf);border-radius:6px;white-space:nowrap;border:1px solid var(--border)}
-.heatmap-table th.user-col{text-align:left;padding-left:10px;min-width:170px}
-.heatmap-table td{padding:6px;text-align:center;border-radius:4px;transition:all .15s;cursor:default;font-family:var(--mono);font-weight:600;font-size:.7rem;min-width:28px}
-.heatmap-table td:hover{transform:scale(1.08);box-shadow:0 2px 8px var(--shadow-md);position:relative;z-index:2}
-.heatmap-table td.user-cell{text-align:left;padding:7px 10px;background:var(--surf);font-family:var(--font);font-weight:600;font-size:.74rem;border:1px solid var(--border);cursor:default}
-.heatmap-table td.user-cell:hover{transform:none;box-shadow:none}
-.heatmap-table td.total-cell{background:var(--indigo-l);color:var(--indigo);font-weight:800;border:1px solid var(--indigo-b)}
-.heatmap-user-sub{font-size:.58rem;color:var(--sub);font-family:var(--mono);font-weight:400}
 
 /* ═══════ ALERTS ═══════ */
 .alerts{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:16px}
@@ -192,11 +157,6 @@ select.inp{cursor:pointer;min-width:110px}
 .kpi-sub{font-size:.58rem;color:var(--muted);margin-top:3px}
 .kpi-bar{height:3px;background:var(--surf3);border-radius:99px;overflow:hidden;margin-top:8px;border:1px solid var(--border)}
 .kpi-bar-fill{height:100%;border-radius:99px;transition:width 1s cubic-bezier(.16,1,.3,1)}
-.c-indigo .kpi-bar-fill{background:linear-gradient(90deg,var(--indigo),#2563eb)}
-.c-emerald .kpi-bar-fill{background:linear-gradient(90deg,var(--emerald),#34d399)}
-.c-rose .kpi-bar-fill{background:linear-gradient(90deg,var(--rose),#fb7185)}
-.c-amber .kpi-bar-fill{background:linear-gradient(90deg,var(--amber),#fbbf24)}
-.c-violet .kpi-bar-fill{background:linear-gradient(90deg,var(--violet),#a855f7)}
 
 /* ═══════ PANELS / CARDS ═══════ */
 .panel{background:var(--surf);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;box-shadow:0 1px 4px var(--shadow)}
@@ -235,12 +195,6 @@ select.inp{cursor:pointer;min-width:110px}
 .ts{background:var(--emerald-l);color:var(--emerald);border-color:var(--emerald-b)}
 .tx{background:var(--rose-l);color:var(--rose);border-color:var(--rose-b)}
 .tb{background:var(--amber-l);color:var(--amber);border-color:var(--amber-b)}
-
-/* ═══════ EFF BAR ═══════ */
-.eff-wrap{display:flex;align-items:center;gap:7px}
-.eff-bar{height:5px;background:var(--surf3);border-radius:99px;overflow:hidden;border:1px solid var(--border);flex:1;max-width:60px}
-.eff-fill{height:100%;border-radius:99px;transition:width .8s ease}
-.av{width:28px;height:28px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:.62rem;font-weight:800;flex-shrink:0;margin-right:8px;color:#fff}
 
 /* ═══════ RANKING ÁREAS ═══════ */
 .area-filter{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;padding:12px;background:var(--surf2);border:1px solid var(--border);border-radius:var(--r)}
@@ -296,13 +250,38 @@ select.inp{cursor:pointer;min-width:110px}
 /* ═══════ MODAL ═══════ */
 .modal-ov{position:fixed;inset:0;background:rgba(13,20,64,.35);z-index:300;display:none;align-items:center;justify-content:center;backdrop-filter:blur(6px);padding:20px}
 .modal-ov.show{display:flex}
-.modal{background:var(--surf);border-radius:var(--r);width:100%;max-width:560px;max-height:88vh;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 20px 60px rgba(30,58,138,.22);border:1px solid var(--border);animation:mIn .25s cubic-bezier(.16,1,.3,1)}
+.modal{background:var(--surf);border-radius:var(--r);width:100%;max-width:960px;max-height:88vh;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 20px 60px rgba(30,58,138,.22);border:1px solid var(--border);animation:mIn .25s cubic-bezier(.16,1,.3,1)}
 @keyframes mIn{from{opacity:0;transform:scale(.95)translateY(12px)}to{opacity:1;transform:none}}
 .modal-hdr{padding:18px 22px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;background:linear-gradient(to bottom,var(--surf2),var(--surf))}
 .modal-ttl{font-size:.9rem;font-weight:800;letter-spacing:-.02em}
 .modal-body{padding:20px 22px;overflow-y:auto;flex:1}
 .modal-close{width:30px;height:30px;border-radius:var(--r-sm);border:1px solid var(--border);background:var(--surf);cursor:pointer;display:grid;place-items:center;color:var(--muted);transition:all .15s}
 .modal-close:hover{background:var(--rose-l);color:var(--rose);border-color:var(--rose-b)}
+
+/* Heatmap dentro del modal */
+.heatmap-wrap{background:var(--surf2);border:1px solid var(--border);border-radius:var(--r-sm);padding:14px;overflow-x:auto}
+.heatmap-legend{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;flex-wrap:wrap;gap:10px}
+.heatmap-legend-ttl{font-size:.72rem;font-weight:700;color:var(--text)}
+.heatmap-scale{display:flex;align-items:center;gap:6px;font-size:.6rem;color:var(--muted)}
+.heatmap-scale-bar{display:flex;height:10px;border-radius:4px;overflow:hidden;border:1px solid var(--border)}
+.heatmap-scale-step{width:22px}
+.heatmap-table{width:100%;border-collapse:separate;border-spacing:2px;min-width:700px}
+.heatmap-table th{padding:7px 6px;font-size:.54rem;font-weight:700;color:var(--sub);text-transform:uppercase;letter-spacing:.05em;text-align:center;background:var(--surf);border-radius:6px;white-space:nowrap;border:1px solid var(--border)}
+.heatmap-table th.user-col{text-align:left;padding-left:10px;min-width:170px}
+.heatmap-table td{padding:6px;text-align:center;border-radius:4px;transition:all .15s;cursor:default;font-family:var(--mono);font-weight:600;font-size:.7rem;min-width:28px}
+.heatmap-table td:hover{transform:scale(1.08);box-shadow:0 2px 8px var(--shadow-md);position:relative;z-index:2}
+.heatmap-table td.user-cell{text-align:left;padding:7px 10px;background:var(--surf);font-family:var(--font);font-weight:600;font-size:.74rem;border:1px solid var(--border);cursor:default}
+.heatmap-table td.user-cell:hover{transform:none;box-shadow:none}
+.heatmap-table td.total-cell{background:var(--indigo-l);color:var(--indigo);font-weight:800;border:1px solid var(--indigo-b)}
+.heatmap-user-sub{font-size:.58rem;color:var(--sub);font-family:var(--mono);font-weight:400}
+.chips-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.chip{display:inline-flex;align-items:center;gap:7px;padding:7px 13px;border-radius:20px;background:var(--surf2);border:1px solid var(--border);font-size:.72rem;font-weight:600;color:var(--muted);transition:all .18s;cursor:default}
+.chip:hover{transform:translateY(-2px);box-shadow:0 4px 12px var(--shadow);border-color:var(--indigo-b);color:var(--indigo)}
+.chip .chip-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.chip .chip-v{font-family:var(--mono);font-weight:800;color:var(--indigo);padding:1px 7px;border-radius:10px;background:var(--indigo-l);font-size:.68rem}
+.chip.on{background:var(--indigo-l);color:var(--indigo);border-color:var(--indigo-b)}
+.pt-hdr-meta{display:flex;gap:14px;font-size:.7rem;color:var(--muted)}
+.pt-hdr-meta b{color:var(--indigo);font-family:var(--mono)}
 
 /* ═══════ SCROLLBAR + SKEL ═══════ */
 ::-webkit-scrollbar{width:6px;height:6px}
@@ -330,7 +309,22 @@ select.inp{cursor:pointer;min-width:110px}
   <div class="boot-brand">Call Center Nebula CET</div>
   <div class="boot-sub">Monitor Oikos</div>
   <div class="boot-spin"></div>
-  <div class="boot-phase" id="bootPhase">Inicializando…</div>
+  <div class="boot-phase" id="bootPhase">Inicializando núcleo...</div>
+</div>
+
+<!-- MODAL HEATMAP -->
+<div class="modal-ov" id="heatmapModal">
+  <div class="modal">
+    <div class="modal-hdr">
+      <div class="modal-ttl">Mapa de Calor · Gestiones por usuario y tipo</div>
+      <button class="modal-close" onclick="closeModal('heatmapModal')">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div class="modal-body" id="heatmapModalBody">
+      <div style="padding:20px;text-align:center;color:var(--ph)">Cargando datos de gestión...</div>
+    </div>
+  </div>
 </div>
 
 <div class="shell">
@@ -367,10 +361,10 @@ select.inp{cursor:pointer;min-width:110px}
       Registro
     </div>
     <div class="sb-div"></div>
-    <div class="sb-sec">Filtros</div>
-    <div class="sb-item" onclick="qFilter('tipo','INBOUND')">↙ Solo Inbound</div>
-    <div class="sb-item" onclick="qFilter('tipo','OUTBOUND')">↗ Solo Outbound</div>
-    <div class="sb-item" onclick="qFilter('estado','ANSWERED')">✓ Atendidas</div>
+    <div class="sb-sec">Filtros rápidos</div>
+    <div class="sb-item" onclick="qFilter('tipo','INBOUND')">Solo Inbound</div>
+    <div class="sb-item" onclick="qFilter('tipo','OUTBOUND')">Solo Outbound</div>
+    <div class="sb-item" onclick="qFilter('estado','ANSWERED')">Atendidas</div>
     <div class="sb-item" onclick="clearAll()">
       <svg fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99"/></svg>
       Limpiar todo
@@ -378,7 +372,7 @@ select.inp{cursor:pointer;min-width:110px}
   </div>
   <div class="sb-foot">
     <div class="status-row"><div class="pulse" id="pulseEl"></div><span id="statusLbl">Conectando…</span></div>
-    <div style="font-family:var(--mono);font-size:.58rem;color:var(--sub);margin-top:3px">Auto-refresh <span id="cycleInfo">60s</span></div>
+    <div style="font-family:var(--mono);font-size:.58rem;color:var(--sub);margin-top:3px">Auto-refresh <span id="cycleInfo">60m</span></div>
   </div>
 </aside>
 
@@ -390,10 +384,14 @@ select.inp{cursor:pointer;min-width:110px}
     <div class="tb-title">Call Center Nebula CET <span class="dim">· Monitor Oikos</span></div>
     <div class="cd-wrap">
       <svg class="cring" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle class="arc" id="ringArc" cx="12" cy="12" r="9" stroke-dashoffset="0"/></svg>
-      <span style="font-family:var(--mono);font-size:.68rem;color:var(--muted)" id="cdtxt">60s</span>
+      <span style="font-family:var(--mono);font-size:.68rem;color:var(--muted)" id="cdtxt">60m</span>
     </div>
     <div class="tb-time" id="clk">--:--:--</div>
-    <div class="update-badge">🔄 <span id="updateText">Cargando…</span></div>
+    <div class="update-badge">Actualizado <span id="updateText">Cargando…</span></div>
+    <button class="btn btn-ghost" onclick="openModal('heatmapModal')">
+      <svg fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zm0 9.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zm9.75-9.75A2.25 2.25 0 0115.75 3.75H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zm0 9.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z"/></svg>
+      Mapa de gestión
+    </button>
     <button class="btn btn-ghost" onclick="refreshAll()">
       <svg id="refreshIco" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99"/></svg>
       Actualizar
@@ -462,38 +460,6 @@ select.inp{cursor:pointer;min-width:110px}
   <!-- CONTENT -->
   <div class="content">
 
-    <!-- PANEL SUPERIOR (SIEMPRE VISIBLE) -->
-    <div id="sec-top" class="panel-top">
-      <div class="pt-hdr">
-        <div>
-          <div class="pt-hdr-ttl">📋 Panel de Gestión General</div>
-          <div style="font-size:.62rem;color:var(--muted);margin-top:2px">Resumen de tipos de gestión por asesor (alimentado desde Englock)</div>
-        </div>
-        <div class="pt-hdr-meta">
-          <div>Total: <b id="pt-total">–</b></div>
-          <div>Usuarios: <b id="pt-users">–</b></div>
-          <div>Tipos: <b id="pt-tipos">–</b></div>
-          <div>Actualizado: <b id="pt-fecha">–</b></div>
-        </div>
-      </div>
-      <div class="pt-body">
-        <div class="chips-row" id="chipsRow">
-          <div class="chip"><div class="skel" style="width:120px"></div></div>
-        </div>
-        <div class="heatmap-wrap">
-          <div class="heatmap-legend">
-            <div class="heatmap-legend-ttl">🔥 Mapa de Calor · Gestiones por usuario y tipo</div>
-            <div class="heatmap-scale">
-              <span>Menos</span>
-              <div class="heatmap-scale-bar" id="heatScale"></div>
-              <span>Más</span>
-            </div>
-          </div>
-          <div id="heatmapBody"><div style="padding:20px;text-align:center;color:var(--ph)">Cargando heatmap…</div></div>
-        </div>
-      </div>
-    </div>
-
     <!-- ═══════ VISTA DASHBOARD (MES VIGENTE) ═══════ -->
     <div class="panel-view on" id="view-dash">
 
@@ -525,33 +491,33 @@ select.inp{cursor:pointer;min-width:110px}
       <!-- GRÁFICAS GENERALES -->
       <div class="g2-1 mb14">
         <div class="cc">
-          <div class="cc-hdr"><div><div class="cc-ttl">📈 Tendencia diaria</div><div class="cc-sub">Total · atendidas · no atendidas</div></div></div>
+          <div class="cc-hdr"><div><div class="cc-ttl">Tendencia diaria</div><div class="cc-sub">Total · atendidas · no atendidas</div></div></div>
           <div style="position:relative;height:185px"><canvas id="cTend"></canvas></div>
         </div>
         <div style="display:flex;flex-direction:column;gap:12px">
           <div class="cc" style="flex:1">
-            <div class="cc-hdr"><div><div class="cc-ttl">🔵 Tipos</div><div class="cc-sub">Composición</div></div></div>
+            <div class="cc-hdr"><div><div class="cc-ttl">Tipos</div><div class="cc-sub">Composición</div></div></div>
             <div style="position:relative;height:130px"><canvas id="cTipos"></canvas></div>
           </div>
           <div class="cc" style="flex:1">
-            <div class="cc-hdr"><div><div class="cc-ttl">📊 Estados</div><div class="cc-sub">Resultados</div></div></div>
+            <div class="cc-hdr"><div><div class="cc-ttl">Estados</div><div class="cc-sub">Resultados</div></div></div>
             <div style="position:relative;height:90px"><canvas id="cEstados"></canvas></div>
           </div>
         </div>
       </div>
       <div class="cc mb14">
-        <div class="cc-hdr"><div><div class="cc-ttl">⏱ Distribución horaria</div><div class="cc-sub">00:00 – 23:00</div></div></div>
+        <div class="cc-hdr"><div><div class="cc-ttl">Distribución horaria</div><div class="cc-sub">00:00 – 23:00</div></div></div>
         <div style="position:relative;height:145px"><canvas id="cHora"></canvas></div>
       </div>
       <div class="g3 mb14">
-        <div class="cc"><div class="cc-hdr"><div><div class="cc-ttl">🎯 Efectividad diaria</div></div></div><div style="position:relative;height:155px"><canvas id="cEff"></canvas></div></div>
-        <div class="cc"><div class="cc-hdr"><div><div class="cc-ttl">🏢 Volumen por sala</div></div></div><div style="position:relative;height:155px"><canvas id="cSala"></canvas></div></div>
-        <div class="cc"><div class="cc-hdr"><div><div class="cc-ttl">⏰ Duración por hora</div></div></div><div style="position:relative;height:155px"><canvas id="cDur"></canvas></div></div>
+        <div class="cc"><div class="cc-hdr"><div><div class="cc-ttl">Efectividad diaria</div></div></div><div style="position:relative;height:155px"><canvas id="cEff"></canvas></div></div>
+        <div class="cc"><div class="cc-hdr"><div><div class="cc-ttl">Volumen por sala</div></div></div><div style="position:relative;height:155px"><canvas id="cSala"></canvas></div></div>
+        <div class="cc"><div class="cc-hdr"><div><div class="cc-ttl">Duración por hora</div></div></div><div style="position:relative;height:155px"><canvas id="cDur"></canvas></div></div>
       </div>
 
       <!-- RANKING POR ÁREAS (con fotos del directorio GS) -->
       <div id="sec-ranking">
-        <div class="sec-lbl">🏢 Ranking de asesores por sala</div>
+        <div class="sec-lbl">Ranking de asesores por sala</div>
         <div class="area-filter" id="areaFilter">
           <button class="area-btn on" data-area="todas">Todas</button>
         </div>
@@ -565,7 +531,7 @@ select.inp{cursor:pointer;min-width:110px}
         <div class="sec-lbl">Registro y números frecuentes</div>
         <div class="g280 mb14">
           <div class="panel">
-            <div class="ph"><div><div class="ph-ttl">📞 Números frecuentes</div><div class="ph-sub">Orígenes con más de 1 llamada</div></div></div>
+            <div class="ph"><div><div class="ph-ttl">Números frecuentes</div><div class="ph-sub">Orígenes con más de 1 llamada</div></div></div>
             <div id="repPanel" style="overflow-y:auto;max-height:420px"><div style="padding:20px;text-align:center;color:var(--ph)">Cargando…</div></div>
           </div>
           <div class="panel">
@@ -604,22 +570,22 @@ select.inp{cursor:pointer;min-width:110px}
 
       <div class="g2 mb14" id="histCharts" style="display:none">
         <div class="cc">
-          <div class="cc-hdr"><div><div class="cc-ttl">📈 Tendencia histórica</div><div class="cc-sub">Volumen por día · toda la ventana</div></div></div>
+          <div class="cc-hdr"><div><div class="cc-ttl">Tendencia histórica</div><div class="cc-sub">Volumen por día · toda la ventana</div></div></div>
           <div style="position:relative;height:250px"><canvas id="cHistTend"></canvas></div>
         </div>
         <div class="cc">
-          <div class="cc-hdr"><div><div class="cc-ttl">📊 Efectividad histórica</div><div class="cc-sub">% atendidas con tendencia</div></div></div>
+          <div class="cc-hdr"><div><div class="cc-ttl">Efectividad histórica</div><div class="cc-sub">% atendidas con tendencia</div></div></div>
           <div style="position:relative;height:250px"><canvas id="cHistEff"></canvas></div>
         </div>
       </div>
 
       <div class="g2 mb14" id="histCharts2" style="display:none">
         <div class="cc">
-          <div class="cc-hdr"><div><div class="cc-ttl">🏢 Por sala</div><div class="cc-sub">Total histórico</div></div></div>
+          <div class="cc-hdr"><div><div class="cc-ttl">Por sala</div><div class="cc-sub">Total histórico</div></div></div>
           <div style="position:relative;height:220px"><canvas id="cHistSala"></canvas></div>
         </div>
         <div class="cc">
-          <div class="cc-hdr"><div><div class="cc-ttl">⏱ Por hora</div><div class="cc-sub">Distribución acumulada</div></div></div>
+          <div class="cc-hdr"><div><div class="cc-ttl">Por hora</div><div class="cc-sub">Distribución acumulada</div></div></div>
           <div style="position:relative;height:220px"><canvas id="cHistHora"></canvas></div>
         </div>
       </div>
@@ -661,7 +627,7 @@ const CFG = {
   GAS_URL    : 'https://script.google.com/macros/s/AKfycbwJKvru_o8rhFBMwpEySRGKkq6UWLfscLhHKU01m2kD-CJGVASg7_5YgujzzLaDOXyw/exec',
   PAGE_SIZE  : 2000,
   PARALLEL   : 4,
-  CICLO      : 60,
+  CICLO      : 3600, // 60 minutos en segundos
   LOG_PAGE   : 60,
   HIST_PAGE  : 60,
   EFF_MIN    : 60,
@@ -699,12 +665,12 @@ document.addEventListener('DOMContentLoaded', async () => {
   initMonthSelect();
   setBootPhase('Conectando con Google Apps Script…');
   try {
-    await loadGASData();
+    await loadGASData(); // Carga datos de gestión en segundo plano
   } catch (e) {
     console.warn('GAS no respondió:', e);
   }
   setBootPhase('Cargando datos del mes vigente desde ngrok…');
-  await loadDashboard();
+  await loadDashboard(); // KPIs y gráficos principales
   hideBoot();
 });
 
@@ -734,9 +700,9 @@ async function loadGASData() {
     G.directorio = data.directorio || {};
     G.metas      = data.metas      || {};
     G.gestion    = data.gestionExterna || null;
-    renderTopPanel();
+    buildHeatmapModal(); // Prepara el modal por si se abre
   } catch (e) {
-    renderTopPanelError(e.message);
+    console.warn('Error GAS', e);
   }
 }
 
@@ -800,7 +766,7 @@ async function loadDashboard(extraFilters={}) {
     });
     G.dash.llamadas = rows;
     G.dash.logPage = 0;
-    setProg(100, `✅ ${n(rows.length)} registros cargados`);
+    setProg(100, `${n(rows.length)} registros cargados`);
     document.getElementById('tab-dash-cnt').textContent = n(rows.length);
     renderDashboard();
   } catch (e) {
@@ -809,7 +775,7 @@ async function loadDashboard(extraFilters={}) {
   }
   setTimeout(()=>showProg(false), 400);
   setOnline(true);
-  document.getElementById('updateText').textContent = `Actualizado ${new Date().toLocaleString('es-CO')}`;
+  document.getElementById('updateText').textContent = `${new Date().toLocaleString('es-CO')}`;
 }
 
 function computeMonthFilters() {
@@ -892,7 +858,6 @@ async function loadHistorico() {
   setProg(5, 'Iniciando descarga histórica…');
 
   try {
-    // Descarga sin fecha específica — luego filtramos en cliente por rango
     const rows = await fetchAllPages({ sala, tipo }, (got, total, p, tp) => {
       const pct = Math.round(5 + (got / Math.max(total,1)) * 90);
       setProg(pct, `Histórico: página ${p}/${tp} — ${n(got)}/${n(total)} registros`);
@@ -901,7 +866,7 @@ async function loadHistorico() {
     G.hist.llamadas = filt;
     G.hist.logPage  = 0;
     G.hist.loaded   = true;
-    setProg(100, `✅ ${n(filt.length)} registros del período`);
+    setProg(100, `${n(filt.length)} registros del período`);
     document.getElementById('tab-hist-cnt').textContent = n(filt.length);
     document.getElementById('histHint').textContent =
       `Período ${desde} → ${hasta} · ${n(filt.length)} registros cargados desde ngrok.`;
@@ -1016,72 +981,75 @@ function buildKPICards(k, isHist) {
 }
 
 // ═══════════════════════════════════════════════════════════════════════
-//  🔝 PANEL SUPERIOR — CHIPS + HEATMAP
+//  🔝 MODAL HEATMAP
 // ═══════════════════════════════════════════════════════════════════════
-function renderTopPanel() {
+function openModal(id) {
+  document.getElementById(id).classList.add('show');
+  if (id === 'heatmapModal') buildHeatmapModal();
+}
+function closeModal(id) {
+  document.getElementById(id).classList.remove('show');
+}
+
+function buildHeatmapModal() {
   const g = G.gestion;
-  if (!g || !g.success) { renderTopPanelError(g?.error || 'Sin datos'); return; }
-
-  document.getElementById('pt-total').textContent = n(g.totalGeneral);
-  document.getElementById('pt-users').textContent = n(g.totalUsuarios || (g.usuarios||[]).length);
-  document.getElementById('pt-tipos').textContent = n((g.tiposGestion||[]).length);
-  document.getElementById('pt-fecha').textContent = g.fecha ? new Date(g.fecha).toLocaleString('es-CO') : '—';
-
-  // CHIPS — uno por tipo de gestión con total
-  const tiposOrdenados = (g.datosGrafica || []).slice();
-  const maxChip = tiposOrdenados[0]?.total || 1;
-  const dots = ['#1e3a8a','#059669','#d97706','#7c3aed','#0284c7','#e11d48','#0f766e','#db2777','#f59e0b','#475569'];
-  document.getElementById('chipsRow').innerHTML = tiposOrdenados.map((t,i) => {
-    const w = Math.round(t.total/maxChip*100);
-    return `<div class="chip" title="${esc(t.tipo)} · ${t.total} gestiones (${w}% del tipo líder)">
-      <div class="chip-dot" style="background:${dots[i%dots.length]}"></div>
-      <span>${esc(t.tipo)}</span>
-      <span class="chip-v">${n(t.total)}</span>
-    </div>`;
-  }).join('') || '<div class="chip">Sin tipos de gestión</div>';
-
-  // HEATMAP COMPLETO
-  buildHeatmap(g);
-}
-
-function renderTopPanelError(msg) {
-  document.getElementById('chipsRow').innerHTML = `<div class="chip" style="background:var(--rose-l);color:var(--rose);border-color:var(--rose-b)">⚠ Sin datos de gestión · ${esc(msg||'')}</div>`;
-  document.getElementById('heatmapBody').innerHTML = `<div style="padding:22px;text-align:center;color:var(--ph)">No se pudieron cargar datos del Apps Script. Verifica la URL del despliegue y el permiso "Cualquiera".</div>`;
-}
-
-function buildHeatmap(g) {
-  const tiposAll = g.tiposGestion || [];
-  const totales  = g.totalesPorTipo || {};
-  const tipos    = tiposAll.filter(t => (totales[t]||0) > 0);
-  const users    = (g.usuarios || []).slice(0, 25); // top 25
-
-  if (!tipos.length || !users.length) {
-    document.getElementById('heatmapBody').innerHTML = '<div style="padding:22px;text-align:center;color:var(--ph)">Sin datos suficientes para heatmap.</div>';
+  const body = document.getElementById('heatmapModalBody');
+  if (!g || !g.success) {
+    body.innerHTML = `<div style="padding:22px;text-align:center;color:var(--ph)">No se pudieron cargar datos de gestión. Verifica la URL del despliegue y el permiso "Cualquiera".</div>`;
     return;
   }
 
-  // max valor celda
+  const tiposAll = g.tiposGestion || [];
+  const totales  = g.totalesPorTipo || {};
+  const tipos    = tiposAll.filter(t => (totales[t]||0) > 0);
+  const users    = (g.usuarios || []).slice(0, 25);
+
+  if (!tipos.length || !users.length) {
+    body.innerHTML = '<div style="padding:22px;text-align:center;color:var(--ph)">Sin datos suficientes para heatmap.</div>';
+    return;
+  }
+
   let maxV = 1;
   users.forEach(u => tipos.forEach(t => { const v = (u.gestiones||{})[t] || 0; if (v > maxV) maxV = v; }));
 
-  // Escala de colores
   const scale = [0, 0.15, 0.35, 0.55, 0.75, 1];
   const scaleBar = scale.map(v => {
     const {bg} = heatColor(v);
     return `<div class="heatmap-scale-step" style="background:${bg}"></div>`;
   }).join('');
-  document.getElementById('heatScale').innerHTML = scaleBar;
 
-  // Header
-  let html = '<table class="heatmap-table"><thead><tr>';
-  html += '<th class="user-col">Asesor</th>';
-  tipos.forEach(t => {
-    const short = t.length > 14 ? t.slice(0,12)+'…' : t;
-    html += `<th title="${esc(t)}">${esc(short)}</th>`;
-  });
-  html += '<th>Total</th></tr></thead><tbody>';
+  let html = `
+    <div class="pt-hdr-meta" style="margin-bottom:12px">
+      <div>Total: <b>${n(g.totalGeneral)}</b></div>
+      <div>Usuarios: <b>${n(g.totalUsuarios || users.length)}</b></div>
+      <div>Tipos: <b>${n(tipos.length)}</b></div>
+      <div>Actualizado: <b>${g.fecha ? new Date(g.fecha).toLocaleString('es-CO') : '—'}</b></div>
+    </div>
+    <div class="chips-row">
+      ${(g.datosGrafica || []).map((t,i) => {
+        const w = Math.round(t.total/maxV*100);
+        const dots = ['#1e3a8a','#059669','#d97706','#7c3aed','#0284c7','#e11d48','#0f766e','#db2777'];
+        return `<div class="chip" title="${esc(t.tipo)} · ${t.total} gestiones (${w}% del tipo líder)">
+          <div class="chip-dot" style="background:${dots[i%dots.length]}"></div>
+          <span>${esc(t.tipo)}</span>
+          <span class="chip-v">${n(t.total)}</span>
+        </div>`;
+      }).join('')}
+    </div>
+    <div class="heatmap-wrap">
+      <div class="heatmap-legend">
+        <div class="heatmap-legend-ttl">Mapa de Calor · Gestiones por usuario y tipo</div>
+        <div class="heatmap-scale">
+          <span>Menos</span>
+          <div class="heatmap-scale-bar">${scaleBar}</div>
+          <span>Más</span>
+        </div>
+      </div>
+      <table class="heatmap-table">
+        <thead><tr><th class="user-col">Asesor</th>${tipos.map(t => `<th title="${esc(t)}">${esc(t.length>14?t.slice(0,12)+'…':t)}</th>`).join('')}<th>Total</th></tr></thead>
+        <tbody>
+  `;
 
-  // Rows
   users.forEach(u => {
     html += '<tr>';
     html += `<td class="user-cell"><div>${esc(u.nombre || u.codigo)}</div><div class="heatmap-user-sub">${esc(u.codigo||'')}</div></td>`;
@@ -1089,19 +1057,16 @@ function buildHeatmap(g) {
     tipos.forEach(t => {
       const v = (u.gestiones||{})[t] || 0;
       sum += v;
-      const intensidad = v / maxV;
-      const {bg, fg} = heatColor(intensidad);
-      const disp = v > 0 ? v : '·';
-      html += `<td style="background:${bg};color:${fg}" title="${esc(u.nombre)} · ${esc(t)}: ${v}">${disp}</td>`;
+      const {bg, fg} = heatColor(v / maxV);
+      html += `<td style="background:${bg};color:${fg}" title="${esc(u.nombre)} · ${esc(t)}: ${v}">${v>0?v:'·'}</td>`;
     });
     html += `<td class="total-cell">${sum}</td></tr>`;
   });
-  html += '</tbody></table>';
-  document.getElementById('heatmapBody').innerHTML = html;
+  html += '</tbody></table></div>';
+  body.innerHTML = html;
 }
 
 function heatColor(v) {
-  // v in [0..1]
   if (v <= 0)   return { bg:'#f7f9ff', fg:'#aab0d4' };
   if (v < 0.2)  return { bg:'rgba(30,58,138,0.10)', fg:'#1e3a8a' };
   if (v < 0.4)  return { bg:'rgba(30,58,138,0.28)', fg:'#0d1440' };
@@ -1111,7 +1076,7 @@ function heatColor(v) {
 }
 
 // ═══════════════════════════════════════════════════════════════════════
-//  👥 RANKING POR SALA (con fotos del directorio GS)
+//  👥 RANKING POR SALA (con tooltips de gestión)
 // ═══════════════════════════════════════════════════════════════════════
 function renderRanking(rows) {
   const container = document.getElementById('areaContainer');
@@ -1122,7 +1087,6 @@ function renderRanking(rows) {
     return;
   }
 
-  // Agregar por extensión (con datos del directorio si existen)
   const map = {};
   rows.forEach(r => {
     const ext = r.extension || 'N/A';
@@ -1145,7 +1109,6 @@ function renderRanking(rows) {
   });
 
   const asesores = Object.values(map);
-  // Agrupar por sala
   const salasMap = {};
   asesores.forEach(a => {
     if (!salasMap[a.sala]) salasMap[a.sala] = { nombre:a.sala, miembros:[], total:0, ans:0 };
@@ -1183,7 +1146,7 @@ function drawAreas(salasMap) {
 
     html += `<div class="area-card">
       <div class="area-hdr">
-        <div class="area-titulo">🏢 ${esc(name)} <span>${sala.miembros.length} asesores</span></div>
+        <div class="area-titulo">${esc(name)} <span>${sala.miembros.length} asesores</span></div>
         <div class="area-stats-row">
           <div class="area-stat"><span class="lbl">Llamadas:</span> <span class="val">${n(sala.total)}</span></div>
           <div class="area-stat"><span class="lbl">Atendidas:</span> <span class="val">${n(sala.ans)}</span></div>
@@ -1197,20 +1160,21 @@ function drawAreas(salasMap) {
       const mc  = pct>=80?'#059669':pct>=50?'#d97706':'#e11d48';
       const avC = AV_COLS[i%AV_COLS.length];
       const dp  = m.durN>0?Math.round(m.durS/m.durN):0;
+      const tooltip = `${m.asesor} · Total: ${m.total} · Atendidas: ${m.ans} · Efectividad: ${m.total>0?Math.round(m.ans/m.total*100):0}%`;
       const avatar = m.fotoId
-        ? `<img class="member-av" src="https://drive.google.com/thumbnail?id=${m.fotoId}&sz=s80" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'member-av',style:'background:${avC};display:flex;align-items:center;justify-content:center;font-size:.68rem;font-weight:800;color:#fff',textContent:'${initials(m.asesor)}'}))">`
-        : `<div class="member-av" style="background:${avC};display:flex;align-items:center;justify-content:center;font-size:.68rem;font-weight:800;color:#fff">${initials(m.asesor)}</div>`;
+        ? `<img class="member-av" src="https://drive.google.com/thumbnail?id=${m.fotoId}&sz=s80" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'member-av',style:'background:${avC};display:flex;align-items:center;justify-content:center;font-size:.68rem;font-weight:800;color:#fff',textContent:'${initials(m.asesor)}'}))" title="${tooltip}">`
+        : `<div class="member-av" style="background:${avC};display:flex;align-items:center;justify-content:center;font-size:.68rem;font-weight:800;color:#fff" title="${tooltip}">${initials(m.asesor)}</div>`;
 
-      html += `<div class="member-card">
+      html += `<div class="member-card" title="${tooltip}">
         ${avatar}
         <div class="member-info">
           <div class="member-name">${esc(m.asesor)}</div>
           <div class="member-role">${esc(m.cargo || 'Ext. '+m.extension)} · ${n(m.total)} llamadas</div>
           <div style="display:flex;gap:8px;font-size:.62rem;color:var(--sub);margin-bottom:3px">
-            <span>✅ ${n(m.ans)}</span>
+            <span>${n(m.ans)}</span>
             <span>↗ ${n(m.out)}</span>
             <span>↙ ${n(m.inb)}</span>
-            <span>⏱ ${fmtD(dp)}</span>
+            <span>${fmtD(dp)}</span>
           </div>
           <div class="member-prog"><div class="member-prog-fill" style="width:${pct}%;background:${mc}"></div></div>
         </div>
@@ -1262,7 +1226,7 @@ function renderHistLog(){
 function changeHistPg(d){ G.hist.logPage = Math.max(0, G.hist.logPage+d); renderHistLog(); }
 
 function rowHtml(r){
-  const tTag = r.tipo_llamada==='INBOUND'?'<span class="tag ti">↙ In</span>':r.tipo_llamada==='OUTBOUND'?'<span class="tag to">↗ Out</span>':'<span class="tag tn">⇄ Int</span>';
+  const tTag = r.tipo_llamada==='INBOUND'?'<span class="tag ti">In</span>':r.tipo_llamada==='OUTBOUND'?'<span class="tag to">Out</span>':'<span class="tag tn">Int</span>';
   const eTag = r.estado==='ANSWERED'?'<span class="tag ts">✓</span>':(r.estado==='NO ANSWER'||r.estado==='NO_ANSWER')?'<span class="tag tx">✗</span>':r.estado==='BUSY'?'<span class="tag tb">~</span>':'<span class="tag">?</span>';
   const fd = (r.fecha||'').replace(/(\d{4})-(\d{2})-(\d{2})/, '$3/$2/$1');
   const dur = r.duracion_seg>0 ? fmtD(r.duracion_seg) : '—';
@@ -1303,7 +1267,7 @@ function renderRepeatedUI(rows){
       <div class="rep-rank ${rk}">${i+1}</div>
       <span class="rep-num">${esc(it.num)}</span>
       <div class="rep-bar"><div class="rep-bar-fill" style="width:${pct}%"></div></div>
-      <span style="font-size:.6rem;color:var(--sub)">✅${it.atend} ✗${it.no}</span>
+      <span style="font-size:.6rem;color:var(--sub)">${it.atend} ✗${it.no}</span>
       <span class="rep-cnt">${it.cnt}×</span>
     </div>`;
   }).join('');
@@ -1548,7 +1512,7 @@ function groupBySala(rows){
 function renderAlerts(k){
   if (!k.total) { showAlert('info','Sin datos para el período.'); return; }
   const alts = [];
-  alts.push(k.eff>=CFG.EFF_MIN ? {t:'ok',m:`✓ Efectividad ${k.eff}%`} : {t:'danger',m:`⚠ Efectividad ${k.eff}% bajo mínimo (${CFG.EFF_MIN}%)`});
+  alts.push(k.eff>=CFG.EFF_MIN ? {t:'ok',m:`Efectividad ${k.eff}%`} : {t:'danger',m:`Efectividad ${k.eff}% bajo mínimo (${CFG.EFF_MIN}%)`});
   if (k.abandono > 30) alts.push({t:'danger',m:`Abandono alto: ${k.abandono}%`});
   if (k.cortas > 5)    alts.push({t:'warn',m:`${k.cortas} llamadas cortas (<10s)`});
   alts.push({t:'info',m:`${n(k.total)} registros · ${k.asesoresActivos} asesores`});
@@ -1614,7 +1578,6 @@ function initMonthSelect(){
   }
   sel.innerHTML = html;
 
-  // Semanas del mes seleccionado
   const semSel = document.getElementById('fSemana');
   const [yy,mm] = sel.value.split('-').map(Number);
   const lastDay = new Date(yy, mm, 0).getDate();
@@ -1625,7 +1588,6 @@ function initMonthSelect(){
     semHtml += `<option value="${w}">Sem ${w} (${ds}-${de})</option>`;
   }
   semSel.innerHTML = semHtml;
-
   sel.onchange = initMonthSelect;
 }
 function fillSalaSelect(){
@@ -1690,9 +1652,9 @@ function startCountdown(){
     G.cd--;
     if (G.cd<=0) { G.cd=CFG.CICLO; if(G.currentTab==='dash') loadDashboard(); }
     const t=document.getElementById('cdtxt'), a=document.getElementById('ringArc'), c=document.getElementById('cycleInfo');
-    if (t) t.textContent = G.cd+'s';
+    if (t) t.textContent = Math.floor(G.cd/60)+'m';
     if (a) a.style.strokeDashoffset = CIRCUM - (CIRCUM * G.cd / CFG.CICLO);
-    if (c) c.textContent = G.cd+'s';
+    if (c) c.textContent = Math.floor(G.cd/60)+'m';
   }, 1000);
 }
 function refreshAll(){
